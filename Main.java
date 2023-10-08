@@ -65,21 +65,22 @@ class Main
 
        String Cars_Used_for_MoreThan_10years = abs_path+"\\Cars_Used_for_MoreThan_10years";
        try {
-         System.out.println("Creating List of cars that have been in use for more than 10 Years(Current year:2023):");
+         System.out.println("Creating List of cars of Brand Tata, that have been in use for more than 10 Years(Current year:2023):");
          //System.out.println("------------------------------");
          FileWriter pen=new FileWriter(Cars_Used_for_MoreThan_10years);
-         pen.write("List of cars that have been in use for more than 10 Years(Current year:2023):\n");
+         pen.write("List of cars of Brand TATA, that have been in use for more than 10 Years(Current year:2023):\n");
          pen.write("------------------------------\n");
 
         for(Car i:obj)
         {
             int year=current_year-i.year_of_manufacture;
-            if(year>10)
+            String s="TATA";
+            if(year>10 && s.equals(i.make))
             {
                 //System.out.println("id: "+i.id+"\n make: "+i.make+"\n model: "+i.model+"\n year_of _manufactue: "+i.year_of_manufacture + "\n color:"+i.color+ "\n price:"+i.price+"\n Reg_Number: "+i.registration_number);  
                 pen.write("id: "+i.id+"\n make: "+i.make+"\n model: "+i.model+"\n year_of _manufactue: "+i.year_of_manufacture + "\n color:"+i.color+ "\n price:"+i.price+"\n Reg_Number: "+i.registration_number);                               
             }
-        }  
+        }
         pen.close();
         System.out.println("Created List of cars that have been in use for more than 10 Years(Current year:2023):");
         System.out.println("--------------------------------");  
